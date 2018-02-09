@@ -22,6 +22,9 @@ sudo curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-c
 sudo chmod +x /usr/local/bin/docker-compose
 sudo curl -L https://raw.githubusercontent.com/docker/compose/1.19.0/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 
+# misc
+mkdir -p ~/buildroot-download
+
 echo "Log off and in now."
 echo "Run 'docker run hello-world' to test docker."
 echo "Run 'docker-compose --version' to test docker-compose."
