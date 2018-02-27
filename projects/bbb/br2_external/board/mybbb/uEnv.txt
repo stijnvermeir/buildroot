@@ -1,5 +1,9 @@
 devtype=mmc
 bootpart=0:1
 bootdir=
-bootargs=console=ttyS0,115200n8 root=/dev/mmcblk0p2 rw rootfstype=ext4 rootwait
-uenvcmd=run loadimage;run loadfdt;printenv bootargs;bootz ${loadaddr} - ${fdtaddr};
+#bootargs=console=ttyS0,115200n8 root=/dev/mmcblk0p2 rw rootfstype=ext4 rootwait
+#uenvcmd=run loadimage;run loadfdt;printenv bootargs;bootz ${loadaddr} - ${fdtaddr};
+bootargs=console=ttyS0,115200n8 root=/dev/nfs ip=192.168.1.221 nfsroot=192.168.1.111:/home/dev/rootfs/ rw rootwait
+serverip=192.168.1.111
+ipaddr=192.168.1.221
+uenvcmd=tftp ${loadaddr} zImage;tftp ${fdtaddr} mybbb.dtb;printenv bootargs;bootz ${loadaddr} - ${fdtaddr};

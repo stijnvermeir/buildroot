@@ -18,6 +18,8 @@ services:
     volumes:
       - ./projects/bbb:/work
       - ~/buildroot-download:/download
+      - /var/lib/tftpboot:/tftpboot
+      - ~/rootfs:/rootfs
     environment:
       - BR2_EXTERNAL=/work/br2_external
       - BR2_DL_DIR=/download
