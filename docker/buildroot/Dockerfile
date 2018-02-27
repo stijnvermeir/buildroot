@@ -27,5 +27,5 @@ RUN apt-get update && apt-get install -y \
 	tree \
 	libncurses5-dev
 
-RUN wget -q -O - https://buildroot.org/downloads/buildroot-2017.11.2.tar.gz | tar xz && mv buildroot-2017.11.2 buildroot
+RUN wget -q -O - https://buildroot.org/downloads/buildroot-2017.02.10.tar.gz | tar xz && mv buildroot-2017.02.10 buildroot
 

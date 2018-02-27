@@ -3,11 +3,20 @@ services:
   ubuntu:
     image: ubuntu:16.04 
   buildroot:
-    image: buildroot:2017.11.2
+    image: buildroot:2017.02.10
     build:
       context: ./docker/buildroot
     volumes:
       - ./template:/work
+      - ~/buildroot-download:/download
+    environment:
+      - BR2_EXTERNAL=/work/br2_external
+      - BR2_DL_DIR=/download
+    working_dir: /work
+  bbb:
+    image: buildroot:2017.02.10
+    volumes:
+      - ./projects/bbb:/work
       - ~/buildroot-download:/download
     environment:
       - BR2_EXTERNAL=/work/br2_external

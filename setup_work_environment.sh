@@ -24,6 +24,12 @@ sudo curl -L https://raw.githubusercontent.com/docker/compose/1.19.0/contrib/com
 
 # misc
 mkdir -p ~/buildroot-download
+# picocom
+sudo apt-get install picocom 
+sudo usermod -aG dialout $USER
+# tftp and nfs
+sudo apt-get install tftpd-hpa nfs-kernel-server
+echo "$HOME/rootfs 192.168.1.221(rw,no_root_squash,no_subtree_check)" | sudo tee -a /etc/exports
 
 echo "Log off and in now."
 echo "Run 'docker run hello-world' to test docker."
